@@ -1,7 +1,7 @@
 name: Skript-AnvilGUI
 author: DereWah
 description: A skript to add Anvil GUIs in Skript.
-version: 1.11
+version: 1.12
 api-version: 1.13
 main: org.derewah.skriptanvilgui.SkriptAnvilGUI
 depend: [Skript]

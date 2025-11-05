@@ -20,7 +20,7 @@ public class SkriptAnvilGUI extends JavaPlugin {
     public static FileConfiguration config;
     public void onEnable(){
         instance = this;
-        String latest_compatible = "1.21.8";
+        String latest_compatible = "1.21.10";
         if (!isCompatible(this.getServer().getVersion(), latest_compatible)){
             getInstance().getLogger().severe("Skript-AnvilGUI is not compatible yet with this MC version." +
                     "Current version: " + this.getServer().getVersion() + ", latest compatible version: "
