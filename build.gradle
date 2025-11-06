@@ -1,0 +1,46 @@
+plugins {
+        id 'java'
+        id 'com.gradleup.shadow' version '8.3.5'
+        id 'co.uzzu.dotenv.gradle' version '2.0.0'
+}
+
+group = 'kr.dreamcraft.skript'
+version = '1.2'
+description = 'Skript-AnvilGUI'
+
+java {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+        mavenCentral()
+        maven { url "https://repo.skriptlang.org/releases" }
+        maven { url "https://repo.destroystokyo.com/content/repositories/snapshots/" }
+        maven { url "https://repo.papermc.io/repository/maven-public/" }
+        maven { url "https://repo.codemc.io/repository/maven-snapshots/" }
+}
+
+dependencies {
+        // --- Skript / Spigot dependencies ---
+        compileOnly "com.github.SkriptLang:Skript:2.13.1"
+        compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
+
+        // --- AnvilGUI ---
+        implementation "net.wesjd:anvilgui:1.10.10-SNAPSHOT"
+
+        // --- Lombok (provided only) ---
+        compileOnly "org.projectlombok:lombok:1.18.26"
+        annotationProcessor "org.projectlombok:lombok:1.18.26"
+}
+
+shadowJar {
+        archiveFileName.set("${project.name}-${project.version}.jar")
+        if (env.isPresent('JAR_DIR')) {
+                destinationDirectory.set(file(env.fetch('JAR_DIR')))
+        }
+}
+
+tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+}

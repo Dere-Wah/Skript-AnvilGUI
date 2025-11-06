@@ -1,7 +1,9 @@
 name: Skript-AnvilGUI
-author: DereWah
+author:
+  - DereWah
+  - Dot0420
 description: A skript to add Anvil GUIs in Skript.
-version: 1.11
-api-version: 1.13
-main: org.derewah.skriptanvilgui.SkriptAnvilGUI
+version: 1.2
+api-version: 1.21
+main: kr.dreamcraft.skript.skriptanvilgui.SkriptAnvilGUI
 depend: [Skript]
